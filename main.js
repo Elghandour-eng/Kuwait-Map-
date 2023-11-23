@@ -23,7 +23,7 @@ function initialize() {
         )
             .then((response) => response.json())
             .then((data) => drawPolygon(data, map)) // Pass map as an argument
-            .catch((error) => alert(error));
+            .catch((error) => alert("يرجي الانتظار حتي تحميل الخريطة"));
     }
     //--------------------------------------------------------------------------------------//
 
@@ -37,7 +37,7 @@ function initialize() {
                 ...addMarkers(data.offers, map),   // Pass map as an argument
                 ...addMarkers(data.events, map)    // Pass map as an argument
             ];
-        }).catch((error) => alert(error));
+        }).catch((error) => alert("يرجي الانتظار حتي تحميل الخريطة"));
     
 }
 
