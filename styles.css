@@ -20,7 +20,7 @@
     left: 0;
     width: 100%;
     height: 50vh; /* Adjust this to control the height of the bar */
-    background-color: red;
+    background-color: green;
     transition: transform 0.3s ease-in-out; /* Smooth opening animation */
 }
 
