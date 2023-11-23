@@ -14,17 +14,19 @@ async function initialize() {
     // Fetch the data from the JSON file and pass it to the drawPolygon function
     // --------------------------------------------------------------------------------------//
     // if mobile dno't draw polygon
+    /*
     if (checkDevice() === "Mobile Device") {
         console.log("mobile devce");
         map.setOptions({ zoom: 9.8  });
     } else {
+        */
         fetch(
             "https://raw.githubusercontent.com/Elghandour-eng/Kuwait-Coordinates/main/kw-coor.json"
         )
             .then((response) => response.json())
             .then((data) => drawPolygon(data, map)) // Pass map as an argument
             .catch((error) => alert("يرجي الانتظار حتي تحميل الخريطة"));
-    }
+    //}
     //--------------------------------------------------------------------------------------//
 
     // Fetch data initially without any filters
