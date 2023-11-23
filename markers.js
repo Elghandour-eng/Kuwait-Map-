@@ -10,7 +10,7 @@ export function addMarkers(items, map) {
             title: item.title,
             icon: {
                 url: "map/images/marker.svg",
-                scaledSize: checkDevice() === "Mobile Device" ?  new google.maps.Size(60, 60) : new google.maps.Size(30, 30),
+                scaledSize: checkDevice() == "Mobile Device" ?  new google.maps.Size(60, 60) : new google.maps.Size(30, 30),
                 origin: new google.maps.Point(0, 0),
 
             }
