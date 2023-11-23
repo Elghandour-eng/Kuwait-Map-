@@ -15,4 +15,13 @@ export var mapProperties = {
             east: 48.421 // Kuwait east
         },
     },
+    styles:[ 
+        {
+          featureType:"all",
+          stylers:[
+            {saturation:-80}
+          ]
+        }
+      ]  
+    
 };

@@ -6,39 +6,38 @@ import { checkDevice } from './responsive_phone.js';
 
 let markers = []; // Array to store the markers
 
-function initialize() {
-    // Initialize the map
-    var map = new google.maps.Map(document.getElementById("googleMap"), mapProperties);
-    // --------------------------------------------------------------------------------------//
+async function fetchData() {
+    try {
+        const response1 = await fetch("https://raw.githubusercontent.com/Elghandour-eng/Kuwait-Coordinates/main/kw-coor.json");
+        const data1 = await response1.json();
 
-    // Fetch the data from the JSON file and pass it to the drawPolygon function
-    // --------------------------------------------------------------------------------------//
-    // if mobile dno't draw polygon
+        const response2 = await fetch("https://visitmykuwait.co/api/v1/map-content");
+        const data2 = await response2.json();
+
+        return { polygonData: data1, markerData: data2 };
+    } catch (error) {
+        alert("يرجي الانتظار حتي تحميل الخريطة");
+    }
+}
+
+function initialize(data) {
+    var map = new google.maps.Map(document.getElementById("googleMap"), mapProperties);
+
     if (checkDevice() === "Mobile Device") {
         console.log("mobile devce");
-        map.setOptions({ zoom: 9.8  });
+        map.setOptions({ zoom: 9.8 });
     } else {
-        fetch(
-            "https://raw.githubusercontent.com/Elghandour-eng/Kuwait-Coordinates/main/kw-coor.json"
-        )
-            .then((response) => response.json())
-            .then((data) => drawPolygon(data, map)) // Pass map as an argument
-            .catch((error) => alert("يرجي الانتظار حتي تحميل الخريطة"));
+        drawPolygon(data.polygonData, map);
     }
-    //--------------------------------------------------------------------------------------//
 
-    // Fetch data initially without any filters
-    fetch("https://visitmykuwait.co/api/v1/map-content")
-        .then((response) => response.json())
-        .then((data) => {
-            markers = [
-                ...markers,
-                ...addMarkers(data.articles, map), // Pass map as an argument
-                ...addMarkers(data.offers, map),   // Pass map as an argument
-                ...addMarkers(data.events, map)    // Pass map as an argument
-            ];
-        }).catch((error) => alert("يرجي الانتظار حتي تحميل الخريطة"));
-    
+    markers = [
+      ...markers,
+      ...addMarkers(data.markerData.articles, map),
+      ...addMarkers(data.markerData.offers, map),
+      ...addMarkers(data.markerData.events, map)
+    ];
 }
+
+fetchData().then(initialize);
 
 google.maps.event.addDomListener(window, 'load', initialize);
