@@ -3,7 +3,7 @@ import { checkDevice } from './responsive_phone.js';
 
 export var mapProperties = {
     center: { lat: 29.3759, lng: 47.9774 }, // Centered at Kuwait
-    zoom: 7.2,
+    zoom: (checkDevice() === "Mobile Device") ? 8.5 : 7.5,
     mapId: (checkDevice() === "Mobile Device") ? "13c8646847f68c72" : "6f5b7f86f2745f19",
     disableDefaultUI: true,
     minZoom: 8 - 2,
