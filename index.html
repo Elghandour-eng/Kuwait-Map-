@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Kuwait Map</title>
+    
+    <style>
+        /* Set the size of the div element that contains the map */
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        
+        #googleMap {
+            height: 100%;
+            width: 100%;
+        }
+    </style>
+    <link rel="stylesheet" href="styles.css"> <!-- Here's where we are linking your styles.css file -->
+</head>
+<body>
+
+    <div id="googleMap"></div>
+
+    <!-- Here's where we are linking your map.js script --> 
+    <script type="module" src="main.js"></script> 
+
+    <!-- Load Google Maps JavaScript API with a callback function -->
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAK6gkEZylfNzt_iQ-iI5lfBdSc5w60PTA&map_ids=6f5b7f86f2745f19"></script>
+
+    <div id="sidebar"></div>
+    <div id="mobilebar "></div>
+
+</body>
+</html>
