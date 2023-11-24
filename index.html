@@ -1,37 +1,42 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Kuwait Map</title>
-    
-    <style>
-        /* Set the size of the div element that contains the map */
-        html, body {
-            height: 100%;
-            margin: 0;
-            padding: 0;
-        }
-        
-        #googleMap {
-            height: 100%;
-            width: 100%;
-        }
-    </style>
-    <link rel="stylesheet" href="styles.css"> <!-- Here's where we are linking your styles.css file -->
+<title>Kuwait Map</title>
+
+<style>
+/* Set the size of the div element that contains the map */
+html, body {
+height: 100%;
+margin: 0;
+padding: 0;
+}
+
+#googleMap {
+height: 75%; /* The height is 400 pixels */
+
+}
+</style>
+<link rel="stylesheet" href="styles.css"> <!-- Here's where we are linking your styles.css file -->
 </head>
 
 <script type="module" src="main.js"></script> 
 <body onload="initialize()">
 
-    <div id="googleMap"></div>
+<div id="googleMap"></div>
+<div id="filter-buttons">
+    <button id="events-button">Events</button>
+    <button id="offers-button">Offers</button>
+    <button id="articles-button">Articles</button>
+    <button id="all-button">All</button>
+</div>
 
-    <!-- Here's where we are linking your map.js script --> 
-    
+<!-- Here's where we are linking your map.js script --> 
 
-    <!-- Load Google Maps JavaScript API with a callback function -->
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAK6gkEZylfNzt_iQ-iI5lfBdSc5w60PTA&map_ids=6f5b7f86f2745f19&callback=initialize"></script>
-    <button >Click me</button>
-    <div id="sidebar"></div>
-    <div id="mobilebar "></div>
+<!-- Load Google Maps JavaScript API with a callback function -->
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAK6gkEZylfNzt_iQ-iI5lfBdSc5w60PTA&callback=initialize"></script>
+<div id="sidebar"></div>
+<div id="mobilebar"></div>
+
 
 </body>
 </html>

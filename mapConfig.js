@@ -6,8 +6,7 @@ export var mapProperties = {
   zoom: (checkDevice() === "Mobile Device") ? 10 : 7.5,
   mapId: (checkDevice() === "Mobile Device") ? "13c8646847f68c72" : "6f5b7f86f2745f19",
   disableDefaultUI: true,
-  minZoom: 8 - 2,
-  maxZoom: 14,
+  minZoom: 7,
   restriction: {
       latLngBounds: {
           north: 30.095, // Kuwait north
@@ -16,13 +15,29 @@ export var mapProperties = {
           east: 48.421 // Kuwait east
       },
   },
-  styles:[ 
-      {
-        featureType:"all",
-        elementType:"all",
-        stylers:[
-          {visibility:"off"}
-        ]
-      }
-    ]  
+  styles:[
+    {
+      "featureType": "water",
+      "elementType": "geometry.fill",
+      "stylers": [
+        { "color": "#d3d3d3" }
+      ]
+    },
+    {
+      "featureType": "transit",
+      "stylers": [
+        { "color": "#808080" },
+        { "visibility": "off" }
+      ]
+    },
+    {
+      "featureType": "road.highway",
+      "elementType": "geometry.stroke",
+      "stylers": [
+        { "visibility": "on" },
+        { "color": "#b3b3b3" }
+      ]
+    },
+    // More style rules here as needed.
+  ], 
 };
