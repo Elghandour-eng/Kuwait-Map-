@@ -90,6 +90,9 @@ body {
   overflow-y: auto;
   opacity: 1;
   transition: left 0.25s ease-in-out 0s, opacity 0.5s ease-in-out 0s;
+  border-top: 5px solid #3dc2c2;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
 }
 
 #mobilebar.active {
@@ -139,25 +142,6 @@ body {
   cursor: pointer !important;
 }
 
-/* #mobilebar {
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  width: 100%; 
-  min-height: 600px; 
-  background-color: rgb(255, 255, 255); 
-  overflow-y: auto;
-  transition: transform 0.3s ease-in-out;
-  transform: translateY(
-    100%
-  ); 
-}
-
-#mobilebar.active {
-  transform: translateY(
-    0
-  ); 
-} */
 
 .close-sidebar-button {
   display: flex;
@@ -276,6 +260,7 @@ div {
     font-size: 22px;
     cursor: pointer !important;
 }
+
 .zoom-in , .zoom-out
 {
   background: #fff;
@@ -285,6 +270,7 @@ div {
   cursor: pointer !important;
   height: 30px !important;
   font-size: 24px;
+  padding: auto;
 }
 .zoom-out
 {
@@ -392,26 +378,26 @@ div {
 
 @media only screen and (max-width: 1245px)
 {
-/*
-  #filter-buttons {
-    top: 64px;
-    max-width: 100%;
-    flex-wrap: nowrap;
-    overflow-x: scroll;
-    right: unset;
-    left: 0px;
-    padding: 10px 30px 0px;
-    background: rgba(0, 0, 0, 0.08);
-    box-shadow: rgba(0, 0, 0, 0.08) 0px 16px 24px 6px;
-}
-#filter-buttons::-webkit-scrollbar {
-  width: 3px !important;
-  background: #fff;
-}*/
+
 #filter-buttons > * {
   flex: 0 0 auto;
 }
 #filter-buttons button {
   font-size: 20px;
 }
+}
+
+@media only screen and (max-width: 600px) {
+  #filter-buttons button {
+    padding: 10px 20px;
+    font-size: 14px;
+    height: auto;
+  }
+  
+  .controlDivStyle {
+    bottom: 10px !important;
+    left: 10px !important;
+    width: auto;
+    height: auto;
+  }
 }

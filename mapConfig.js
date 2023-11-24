@@ -12,7 +12,7 @@ export var mapProperties = {
           north: 30.095, // Kuwait north
           south: 28.524, // Kuwait south
           west: 46.372, // Kuwait west
-          east: 48.421 // Kuwait east
+          east: 49.421 // Kuwait east
       },
   },
   styles:[

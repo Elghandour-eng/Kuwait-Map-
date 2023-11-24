@@ -25,15 +25,19 @@ export function addMarkers(items, map, type) {
                 const sidebar = document.getElementById("sidebar");
                 sidebar.innerHTML =
                     `<h1>${item.title}</h1>
-                     <img src="${item.cover}">
+                     <img src="${item.cover} style="border-radius: 15px;padding: 12px">
                      <p>${item.description}</p>
+                     <p>${item.content}</p>
                      <a href="${item.url}" target='_blank'>استكشف المذيد</a>`;
 
                 const mobilebar = document.getElementById("mobilebar");
                 mobilebar.innerHTML =
                     `<h1>${item.title}</h1>
-                      <img src="${item.cover}">
+                    
+                    <img src="${item.cover}" alt="Image" style="border-radius: 15px;padding: 12px">
+                
                       <p>${item.description}</p>
+                      <p>${item.content}</p>
                       <a href="${item.url}" target='_blank'>استكشف المذيد</a>`;     
 
                 // Check if device is mobile

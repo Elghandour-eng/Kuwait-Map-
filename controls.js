@@ -37,6 +37,8 @@ if (checkDevice() === "Mobile Device") {
     centerMapDiv.style.height = '125px';
     changeMapTypeDiv.style.width ='125px';
     changeMapTypeDiv.style.height ='125px'; 
+
+
 }
 
   // Setup click event listeners for all buttons
