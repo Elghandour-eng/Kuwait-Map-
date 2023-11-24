@@ -11,6 +11,16 @@
 <script type="module" src="main.js"></script> 
 </head>
 
+<style>
+    #filter-buttons {
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+    #filter-buttons button {
+        display: inline-block;
+    }
+</style>
+
 <body onload="initialize()">
 
 <div id="googleMap"></div>
@@ -33,6 +43,7 @@
 
 <!-- Load Google Maps JavaScript API with a callback function -->
 <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAK6gkEZylfNzt_iQ-iI5lfBdSc5w60PTA&callback=initialize"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <div id="sidebar"></div>
 <div id="mobilebar"></div>
 
