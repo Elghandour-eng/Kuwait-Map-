@@ -3,6 +3,7 @@ body {
   height: 100%;
   margin: 0;
   padding: 0;
+  font-family: 'Lama Sans', sans-serif;
 }
 
 #googleMap {
@@ -36,7 +37,7 @@ body {
 
 #sidebar h1 {
   text-align: center;
-  font-size: 24px;
+  font-size: 20px;
   line-height: 28px;
   padding: 0 5%;
   color: rgb(34, 34, 34);
@@ -51,6 +52,7 @@ body {
 #sidebar p {
   text-align: center;
   font-size: 17px;
+  line-height: 30px;
   margin-top: 25px;
   padding: 0 5%;
 }
@@ -221,7 +223,7 @@ body {
   width: 20px;
 }
 
-/* ///////////////////////////////////////////////////////////////////////// */
+
 
 .controlDivStyle {
   padding: 7px 0;
@@ -274,4 +276,142 @@ div {
     font-size: 22px;
     cursor: pointer !important;
 }
+.zoom-in , .zoom-out
+{
+  background: #fff;
+  border: 1px solid #fff;
+  border-radius: 0 !important;
+  width: 30px !important;
+  cursor: pointer !important;
+  height: 30px !important;
+  font-size: 24px;
+}
+.zoom-out
+{
+  border-top: 1px solid rgb(146, 162, 177);
+}
+.zoom-controls
+{
+  padding: 7px 0;
+    position: absolute !important;
+    right: unset !important;
+    top: unset !important;
+    left: 35px !important;
+    bottom: 34px !important;
+    margin-bottom: 8px;
+    width: 32px;
+    height: 66px;
+    background: rgb(255, 255, 255);
+    border: 1px solid #fff;
+    box-shadow: rgba(0, 0, 0, 0.08) 0px 16px 24px 6px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: space-between;
+    user-select: none;
+    cursor: pointer;
+}
+.center-map
+{
+  width: 32px !important;
+  height: 32px !important;
+  background: rgb(255, 255, 255);
+  box-shadow: rgba(0, 0, 0, 0.08) 0px 16px 24px 6px !important;
+  border-radius: 5px !important;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+  user-select: none;
+  border: 1px solid #fff;
+  position: absolute;
+  bottom: 127px;
+  left: -74px;
+}
 
+.zoom-controls  div
+{
+  width: auto !important;
+  height: auto !important;
+}
+.change-map-type
+{
+  background-color: rgb(255, 255, 255);
+  border: 1px solid #fff;
+  box-shadow: rgba(0, 0, 0, 0.08) 0px 21.3333px 32px 8px;
+  width: 42px !important;
+  height: 42px !important;
+  padding: 2px;
+  transition: width 0.5s ease 0s, height 0.5s ease 0s;
+  border-radius: 6px;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+  cursor: pointer;
+  user-select: none;
+  position: absolute;
+  left: -31px;
+  bottom: 43px;
+}
+.change-map-type img
+{
+  box-sizing: border-box;
+    padding: 0px;
+    border: none;
+    margin: auto;
+    display: block;
+    width: 0px;
+    border-radius: 6px;
+    height: 0px;
+    min-width: 100%;
+    max-width: 100%;
+    min-height: 100%;
+    max-height: 100%;
+}
+@media only screen and (max-width: 769px) {
+#sidebar {
+  left: calc(100vw - 70%);
+  width: 70%;
+}
+.close-sidebar-button {
+  left: calc(100vw - 78.5%);
+}
+.close-sidebar-mobile {
+  background: transparent !important;
+  border: 1px solid transparent !important;
+  color: #000 !important;
+  font-size: 25px;
+}
+}
+
+@media only screen and (max-width: 1245px)
+{
+/*
+  #filter-buttons {
+    top: 64px;
+    max-width: 100%;
+    flex-wrap: nowrap;
+    overflow-x: scroll;
+    right: unset;
+    left: 0px;
+    padding: 10px 30px 0px;
+    background: rgba(0, 0, 0, 0.08);
+    box-shadow: rgba(0, 0, 0, 0.08) 0px 16px 24px 6px;
+}
+#filter-buttons::-webkit-scrollbar {
+  width: 3px !important;
+  background: #fff;
+}*/
+#filter-buttons > * {
+  flex: 0 0 auto;
+}
+#filter-buttons button {
+  font-size: 20px;
+}
+}

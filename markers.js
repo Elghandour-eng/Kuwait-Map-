@@ -27,14 +27,14 @@ export function addMarkers(items, map, type) {
                     `<h1>${item.title}</h1>
                      <img src="${item.cover}">
                      <p>${item.description}</p>
-                     <a href="${item.url}" target='_blank'>Ø§ÙƒØªØ´Ù Ø§Ù„Ù…Ø²ÙŠØ¯</a>`;
+                     <a href="${item.url}" target='_blank'>استكشف المذيد</a>`;
 
                 const mobilebar = document.getElementById("mobilebar");
                 mobilebar.innerHTML =
                     `<h1>${item.title}</h1>
                       <img src="${item.cover}">
                       <p>${item.description}</p>
-                      <a href="${item.url}" target='_blank'>Ø§ÙƒØªØ´Ù Ø§Ù„Ù…Ø²ÙŠØ¯</a>`;     
+                      <a href="${item.url}" target='_blank'>استكشف المذيد</a>`;     
 
                 // Check if device is mobile
                 if (checkDevice() === "Mobile Device") {

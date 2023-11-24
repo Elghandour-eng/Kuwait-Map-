@@ -4,6 +4,7 @@ import { checkDevice } from './responsive_phone.js';
 export function addControls(map) {
    // Create a div for each control.
    var zoomDiv = document.createElement('div');
+   zoomDiv.classList.add('zoom-controls');
    var zoomInDiv = document.createElement('div');
    var zoomOutDiv = document.createElement('div');
    var centerMapDiv = document.createElement('div');
@@ -21,9 +22,9 @@ export function addControls(map) {
   zoomDiv.appendChild(zoomInDiv);
   zoomDiv.appendChild(zoomOutDiv);
 
-  centerMapDiv.innerHTML = "<button class='center-map' style='width:100%; height:100%'>Center Map</button>";
+  centerMapDiv.innerHTML = "<button class='center-map' style='width:100%; height:100%'><img src='map/images/nearMe.svg'/></button>";
   
-  changeMapTypeDiv.innerHTML = "<button class='change-map-type' style='width:100%; height:100%'>Change Map Type</button>";
+  changeMapTypeDiv.innerHTML = "<button class='change-map-type' style='width:100%; height:100%'><img src='map/images/maptype.png'/></button>";
 
 
 
