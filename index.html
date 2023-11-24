@@ -2,35 +2,30 @@
 <html>
 <head>
 <title>Kuwait Map</title>
-
-<style>
-/* Set the size of the div element that contains the map */
-html, body {
-height: 100%;
-margin: 0;
-padding: 0;
-}
-
-#googleMap {
-height: 75%; /* The height is 400 pixels */
-
-}
-</style>
-<link rel="stylesheet" href="styles.css"> <!-- Here's where we are linking your styles.css file -->
+<link rel="icon" href="images/fav.webp">
+<link rel="stylesheet" href="styles.css">
+<script type="module" src="main.js"></script> 
 </head>
 
-<script type="module" src="main.js"></script> 
 <body onload="initialize()">
 
 <div id="googleMap"></div>
+
 <div id="filter-buttons">
-    <button id="events-button">Events</button>
-    <button id="offers-button">Offers</button>
-    <button id="articles-button">Articles</button>
-    <button id="all-button">All</button>
+    <button id="events-button">
+        <img src="map/images/events_dark.png" alt="image">
+        Events</button>
+    <button id="offers-button">
+        <img src="map/images/shopping_dark.png" alt="image">
+        Offers</button>
+    <button id="articles-button">
+        <img src="map/images/experiences_dark.png" alt="image">
+        Articles</button>
+    <button id="all-button">
+        <img src="map/images/all.svg" alt="image">
+        All</button>
 </div>
 
-<!-- Here's where we are linking your map.js script --> 
 
 <!-- Load Google Maps JavaScript API with a callback function -->
 <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAK6gkEZylfNzt_iQ-iI5lfBdSc5w60PTA&callback=initialize"></script>

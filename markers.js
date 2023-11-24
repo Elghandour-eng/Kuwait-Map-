@@ -52,7 +52,7 @@ export function addMarkers(items, map, type) {
                 // Create a button to close the mobilebar
                 const closeButtonMobilebar = document.createElement("button");
                 closeButtonMobilebar.textContent = "x";
-                closeButtonMobilebar.classList.add("close-sidebar-button"); 
+                closeButtonMobilebar.classList.add("close-sidebar-mobile"); 
 
                 // Add event listeners to both buttons
                 closeButtonSidebar.addEventListener("click", () => {

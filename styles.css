@@ -1,72 +1,277 @@
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+#googleMap {
+  min-height: 100vh;
+}
+
 #sidebar {
-    position: fixed;
-    right: 0;
-    top: 0;
-    width: 300px; /* Adjust as needed */
-    height: 100%;
-    background-color: #f4f4f4; /* Adjust as needed */
-    overflow-y: auto;
-    transition: transform 0.3s ease-in-out;
-    transform: translateX(100%); /* Initially hide the sidebar off-screen (to the right) */
+  display: none;
+  flex-direction: column;
+  position: fixed;
+  z-index: 11111;
+  bottom: 0px;
+  top: 0;
+  right: unset;
+  left: calc(100vw - 453px);
+  width: 453px;
+  height: 100%;
+  padding-bottom: 24px;
+  background: rgb(255, 255, 255);
+  box-shadow: rgba(0, 0, 0, 0.08) 0px 16px 24px 6px;
+  direction: ltr;
+  user-select: none;
+  overflow-y: scroll;
+  opacity: 1;
+  transition: left 0.25s ease-in-out 0s, opacity 0.5s ease-in-out 0s;
 }
 
 #sidebar.active {
-    transform: translateX(0); /* When active, move the sidebar to its original position */
+  display: flex !important;
+}
+
+#sidebar h1 {
+  text-align: center;
+  font-size: 24px;
+  line-height: 28px;
+  padding: 0 5%;
+  color: rgb(34, 34, 34);
+}
+
+#sidebar img {
+  margin-top: 25px;
+  height: 254px;
+  width: 100%;
+  object-fit: cover;
+}
+#sidebar p {
+  text-align: center;
+  font-size: 17px;
+  margin-top: 25px;
+  padding: 0 5%;
+}
+#sidebar a {
+  margin-top: 25px;
+  display: flex;
+  gap: 8px;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+  align-self: center;
+  background: rgb(61 194 194);
+  border-radius: 100px;
+  padding: 17px 0px;
+  font-size: 16px;
+  line-height: 16px;
+  color: rgb(255, 255, 255);
+  width: 90%;
+  cursor: pointer !important;
 }
 
 #mobilebar {
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%; /* Adjust as needed */
-    height: 300px; /* Adjust as needed */
-    background-color: rgb(0, 0, 0); /* Adjust as needed */
-    overflow-y: auto;
-    transition: transform 0.3s ease-in-out;
-    transform: translateY(100%); /* Initially hide the sidebar off-screen (to the bottom) */
+  display: none;
+  flex-direction: column;
+  position: fixed;
+  z-index: 11111;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  min-height: 600px;
+  background-color: rgb(255, 255, 255);
+  box-shadow: rgba(0, 0, 0, 0.08) 0px 16px 24px 6px;
+  user-select: none;
+  overflow-y: auto;
+  opacity: 1;
+  transition: left 0.25s ease-in-out 0s, opacity 0.5s ease-in-out 0s;
 }
 
 #mobilebar.active {
-    transform: translateY(0); /* When active, move the sidebar to its original position */
+  display: flex !important;
 }
+
+#mobilebar h1
+{
+    text-align: center;
+    font-size: 24px;
+    line-height: 28px;
+    padding: 0 5%;
+    color: rgb(34, 34, 34);
+}
+
+#mobilebar img
+{
+    margin-top: 25px;
+    height: 254px;
+    width: 100%;
+    object-fit: cover;
+}
+#mobilebar p
+{
+    text-align: center;
+    font-size: 17px;
+    margin-top: 25px;
+    padding: 0 5%;
+}
+#mobilebar a
+{
+    margin-top: 25px;
+    display: flex;
+    gap: 8px;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    align-self: center;
+    background: rgb(61 194 194);
+    border-radius: 100px;
+    padding: 17px 0px;
+    font-size: 16px;
+    line-height: 16px;
+    color: rgb(255, 255, 255);
+    width: 90%;
+    cursor: pointer !important;
+}
+
+/* #mobilebar {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%; 
+  min-height: 600px; 
+  background-color: rgb(255, 255, 255); 
+  overflow-y: auto;
+  transition: transform 0.3s ease-in-out;
+  transform: translateY(
+    100%
+  ); 
+}
+
+#mobilebar.active {
+  transform: translateY(
+    0
+  ); 
+} */
 
 .close-sidebar-button {
-   position:absolute;
-   top:25px; 
-   right:100px; 
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+  position: fixed;
+  right: unset;
+  left: calc(100vw - 495px);
+  width: 42px;
+  top: 11px;
+  height: 42px;
+  background: rgb(61 194 194);
+  border-radius: 5px 0px 0px 5px;
+  user-select: none;
+  border: 1px solid #3dc2c2;
+  color: #fff;
+  font-size: 22px;
+  cursor: pointer !important;
 }
-
 
 #filter-buttons {
-    display: flex;
-    justify-content: space-around;
-    margin-bottom: 20px;
-  }
+  position: absolute;
+  top: 40px;
+  right: unset;
+  left: 40px;
+  display: flex;
+  flex-flow: wrap;
+  -webkit-box-pack: start;
+  justify-content: flex-start;
+  height: auto;
+  direction: ltr;
+  gap: 10px;
+  max-width: 80%;
+  user-select: none;
+  z-index: 111;
+}
 
 #filter-buttons button {
-    padding: 10px 20px;
-    font-size: 16px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  -webkit-box-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  align-items: center;
+  padding: 0px 25px;
+  gap: 8px;
+  cursor: pointer;
+  width: auto;
+  height: 40px;
+  color: rgb(34, 34, 34);
+  background: rgb(255, 255, 255);
+  border: 1px solid rgb(255, 255, 255);
+  box-shadow: rgba(0, 0, 0, 0.08) 0px 16px 24px 6px;
+  border-radius: 32px;
+  transition: all 150ms ease-in-out 0s;
+  text-transform: capitalize;
 }
 
-#events-button {
-    background-color: #f44336; /* Red */
-    color: white;
+#filter-buttons button img {
+  max-height: 20px;
+  width: 20px;
 }
 
-#offers-button {
-    background-color: #4CAF50; /* Green */
-    color: white;
+/* ///////////////////////////////////////////////////////////////////////// */
+
+.controlDivStyle {
+  padding: 7px 0;
+  position: absolute !important;
+  right: unset !important;
+  top: unset !important;
+  left: 35px !important;
+  bottom: 34px !important;
+  margin-bottom: 8px;
+  width: 32px;
+  height: 66px;
+  background: rgb(255, 255, 255);
+  box-shadow: rgba(0, 0, 0, 0.08) 0px 16px 24px 6px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: space-between;
+  user-select: none;
+  cursor: pointer;
 }
 
-#articles-button {
-    background-color: #008CBA; /* Blue */
-    color: white;
+div {
+  cursor: pointer !important;
 }
 
-#all-button {
-    background-color: #e7e7e7; /* Light Grey */
-    color: black;
+
+
+
+
+.close-sidebar-mobile
+{
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    width: 42px;
+    height: 42px;
+    background: rgb(61 194 194);
+    border-radius: 5px 0px 0px 5px;
+    user-select: none;
+    border: 1px solid #3dc2c2;
+    color: #fff;
+    font-size: 22px;
+    cursor: pointer !important;
 }
+
