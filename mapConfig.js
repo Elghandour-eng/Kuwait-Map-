@@ -5,7 +5,7 @@ export var mapProperties = {
   center: { lat: 29.3759, lng: 47.9774 }, // Centered at Kuwait
   zoom: (checkDevice() === "Mobile Device") ? 10 : 7.5,
   mapId: (checkDevice() === "Mobile Device") ? "13c8646847f68c72" : "6f5b7f86f2745f19",
-  disableDefaultUI: true,
+  disableDefaultUI: (checkDevice() === "Mobile Device") ? false : true,
   minZoom: 7,
   restriction: {
       latLngBounds: {

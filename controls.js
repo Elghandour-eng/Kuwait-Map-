@@ -29,14 +29,14 @@ export function addControls(map) {
 
 
 if (checkDevice() === "Mobile Device") {
-    zoomInDiv.style.width = '125px';
-    zoomInDiv.style.height = '125px';
-    zoomOutDiv.style.width = '125px';
-    zoomOutDiv.style.height = '125px';
-    centerMapDiv.style.width = '125px';
-    centerMapDiv.style.height = '125px';
-    changeMapTypeDiv.style.width ='125px';
-    changeMapTypeDiv.style.height ='125px'; 
+    zoomInDiv.style.width = '1px';
+    zoomInDiv.style.height = '1px';
+    zoomOutDiv.style.width = '1px';
+    zoomOutDiv.style.height = '1px';
+    centerMapDiv.style.width = '1px';
+    centerMapDiv.style.height = '1px';
+    changeMapTypeDiv.style.width ='1px';
+    changeMapTypeDiv.style.height ='1px'; 
 
 
 }
