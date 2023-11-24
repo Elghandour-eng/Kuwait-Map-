@@ -83,7 +83,7 @@ body {
   left: 0;
   bottom: 0;
   width: 100%;
-  min-height: 600px;
+  min-height: 70vh;
   background-color: rgb(255, 255, 255);
   box-shadow: rgba(0, 0, 0, 0.08) 0px 16px 24px 6px;
   user-select: none;
@@ -108,7 +108,7 @@ body {
 #mobilebar img
 {
     margin-top: 25px;
-    height: 254px;
+    height: 490px;
     width: 100%;
     object-fit: cover;
 }
@@ -121,22 +121,22 @@ body {
 }
 #mobilebar a
 {
-    margin-top: 25px;
-    display: flex;
-    gap: 8px;
-    -webkit-box-align: center;
-    align-items: center;
-    -webkit-box-pack: center;
-    justify-content: center;
-    align-self: center;
-    background: rgb(61 194 194);
-    border-radius: 100px;
-    padding: 17px 0px;
-    font-size: 16px;
-    line-height: 16px;
-    color: rgb(255, 255, 255);
-    width: 90%;
-    cursor: pointer !important;
+  margin-top: 25px;
+  display: flex;
+  gap: 8px;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+  align-self: center;
+  background: rgb(61 194 194);
+  border-radius: 100px;
+  padding: 22px 0px;
+  font-size: 18px;
+  line-height: 16px;
+  color: rgb(255, 255, 255);
+  width: 75%;
+  cursor: pointer !important;
 }
 
 /* #mobilebar {
