@@ -6,6 +6,7 @@ export var mapProperties = {
   zoom: (checkDevice() === "Mobile Device") ? 10 : 7.5,
   mapId: (checkDevice() === "Mobile Device") ? "13c8646847f68c72" : "6f5b7f86f2745f19",
   disableDefaultUI: true,
+  gestureHandling: 'greedy',
   minZoom: 7,
   restriction: {
       latLngBounds: {
