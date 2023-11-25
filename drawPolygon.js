@@ -1,29 +1,57 @@
-// Description: This file contains the function to draw the polygon on the map.
+export  async function drawPolygon(map) {
+    let polygons = [];
 
-function drawPolygon(data, map) { // Receive map as a parameter
-    var triangleCoords = [];
-    data.geometry.features[0].geometry.coordinates[0].forEach(function (coord) {
-        triangleCoords.push({ lat: coord[1], lng: coord[0] });
-    });
+    try {
+        const response = await fetch('https://raw.githubusercontent.com/Elghandour-eng/Kuwait-Coordinates/main/kuwait-detailed-boundary_953.geojson');
+        const data = await response.json();
 
-    var bermudaTriangle = new google.maps.Polygon({
-        paths: triangleCoords,
-        strokeColor: "transparent",
-        strokeOpacity: 1,
-        strokeWeight: 0,
-        fillColor: "#7cdfcb",
-        fillOpacity: 0,
-    });
+        data.features.forEach(feature => {
+            feature.geometry.coordinates.forEach(polygonCoords => {
+                // Convert coordinates from [lng, lat] to {lat, lng}
+                const paths = polygonCoords[0].map(coord => ({
+                    lat: coord[1],
+                    lng: coord[0]
+                }));
 
-    bermudaTriangle.setMap(map);
+                let polygon = new google.maps.Polygon({
+                    paths,
+                    strokeColor: "#7cdfcb",
+                    strokeOpacity: 0.9,
+                    strokeWeight: 3,
+                    fillColor: "#000000", // Initial fill color is black
+                    fillOpacity: 0, // Initial fill opacity is 0 (transparent)
+                });
 
-    bermudaTriangle.addListener("mouseover", function () {
-        this.setOptions({ fillColor: "#7cdfcb", fillOpacity: 0.35 }); // Use 'this' to refer to the polygon
-    });
+                polygons.push(polygon);
 
-    bermudaTriangle.addListener("mouseout", function () {
-        this.setOptions({ fillColor: "transparent", fillOpacity: 0 }); // Use 'this' to refer to the polygon
-    });
+
+                polygon.addListener("mouseover", () => {
+                    polygons.forEach(poly => poly.setOptions({ fillColor:"#7cdfcb", fillOpacity: .35 }));
+                });
+
+                polygon.addListener("mouseout", () => {
+                    polygons.forEach(poly => poly.setOptions({ fillColor:"#000000", fillOpacity: 0 }));
+                });
+                polygon.addListener("click", () => {
+                    var sidebar = document.getElementById("sidebar");
+                    var mobilebar = document.getElementById("mobilebar");
+                
+                    // Check if sidebars are active
+                    if (sidebar.classList.contains('active')) {
+                        sidebar.classList.remove('active');
+                    }
+                
+                    if (mobilebar.classList.contains('active')) {
+                        mobilebar.classList.remove('active');
+                    }
+                });
+                
+
+                polygon.setMap(map);
+            });
+        });
+    } catch (error) {
+        // Handle error
+        console.error(error);
+    }
 }
-
-export { drawPolygon };

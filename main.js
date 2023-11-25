@@ -6,6 +6,7 @@ import { addMarkers } from './markers.js';
 import { checkDevice } from './responsive_phone.js';
 import { addControls } from './controls.js';
 
+
 let markers = []; 
 
 async function initialize() {
@@ -29,12 +30,7 @@ async function initialize() {
         map.setOptions({ zoom: 9.8  });
     } else {
         
-        fetch(
-            "https://raw.githubusercontent.com/Elghandour-eng/Kuwait-Coordinates/main/kw-coor.json"
-        )
-            .then((response) => response.json())
-            .then((data) => drawPolygon(data, map))
-            .catch((error) => alert("يرجي الانتظار حتي تحميل الخريطة"));
+        drawPolygon(map);
     }
 
     await fetch("https://visitmykuwait.co/api/v1/map-content")
@@ -95,6 +91,22 @@ allButton.addEventListener('click', () => {
    // Show all markers
    markers.forEach(marker => marker.setVisible(true));
 });
+
+// After initializing your map
+google.maps.event.addListener(map, 'click', function() {
+    var sidebar = document.getElementById("sidebar");
+    var mobilebar = document.getElementById("mobilebar");
+
+    // Check if sidebars are active
+    if (sidebar.classList.contains('active')) {
+        sidebar.classList.remove('active');
+    }
+
+    if (mobilebar.classList.contains('active')) {
+        mobilebar.classList.remove('active');
+    }
+});
+
     
 }
 

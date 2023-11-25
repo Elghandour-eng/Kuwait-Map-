@@ -1,9 +1,8 @@
-// markers.js
-
 import { checkDevice } from './responsive_phone.js';
 
 export function addMarkers(items, map, type) {
     let markers = [];
+
     for (let i = 0; i < items.length; i++) {
         let item = items[i];
         let marker = new google.maps.Marker({
@@ -18,21 +17,38 @@ export function addMarkers(items, map, type) {
             type // Add the type here
         });
 
+        var infowindow = new google.maps.InfoWindow({
+          content: 'Your content string',
+          closeBoxURL: "", // this will remove close ('x') button.
+          disableAutoPan: true 
+        });
+
+        marker.addListener("mouseover", () => {
+            infowindow.open(map, marker);
+        });
+
+        marker.addListener("mouseout", () => {
+            infowindow.close(map, marker);
+        });
+
         google.maps.event.addListener(
             marker,
             "click",
             function () {
-                const sidebar = document.getElementById("sidebar");
+                var sidebar = document.getElementById("sidebar");
+                const mobilebar = document.getElementById("mobilebar");
+
                 sidebar.innerHTML =
-                    `<h1>${item.title}</h1>
-                     <img src="${item.cover} style="border-radius: 15px;padding: 12px">
+                    `<button class="close-sidebar-button">x</button>
+                     <h1>${item.title}</h1>
+                     <img src="${item.cover}" style="border-radius: 15px;padding: 12px">
                      <p>${item.description}</p>
                      <p>${item.content}</p>
                      <a href="${item.url}" target='_blank'>استكشف المذيد</a>`;
 
-                const mobilebar = document.getElementById("mobilebar");
                 mobilebar.innerHTML =
-                    `<h1>${item.title}</h1>
+                    `<button class="close-sidebar-mobile">x</button>
+                     <h1>${item.title}</h1>
                     
                     <img src="${item.cover}" alt="Image" style="border-radius: 15px;padding: 12px">
                 
@@ -40,38 +56,19 @@ export function addMarkers(items, map, type) {
                       <p>${item.content}</p>
                       <a href="${item.url}" target='_blank'>استكشف المذيد</a>`;     
 
-                // Check if device is mobile
                 if (checkDevice() === "Mobile Device") {
-                    // Add the "active" and "mobile" classes to the sidebar
                     mobilebar.classList.add("active");
                 } else {
-                    // Add only the "active" class to the sidebar
                     sidebar.classList.add("active");
                 }
-                            // Create a button to close the sidebar
-                const closeButtonSidebar = document.createElement("button");
-                closeButtonSidebar.textContent = "x";
-                closeButtonSidebar.classList.add("close-sidebar-button"); 
 
-                // Create a button to close the mobilebar
-                const closeButtonMobilebar = document.createElement("button");
-                closeButtonMobilebar.textContent = "x";
-                closeButtonMobilebar.classList.add("close-sidebar-mobile"); 
-
-                // Add event listeners to both buttons
-                closeButtonSidebar.addEventListener("click", () => {
-                    // Remove "active" class from sidebar when closing it
+                sidebar.querySelector(".close-sidebar-button").addEventListener("click", () => {
                     sidebar.classList.remove("active");
                 });
 
-                closeButtonMobilebar.addEventListener("click", () => {
-                    // Remove "active" class from mobilebar when closing it
+                mobilebar.querySelector(".close-sidebar-mobile").addEventListener("click", () => {
                     mobilebar.classList.remove("active"); 
                 });
-
-    // Append the close buttons to their respective sidebars
-    sidebar.appendChild(closeButtonSidebar);
-    mobilebar.appendChild(closeButtonMobilebar);
             }
         );
         markers.push(marker);

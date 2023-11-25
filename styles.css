@@ -11,28 +11,20 @@ body {
 }
 
 #sidebar {
-  display: none;
-  flex-direction: column;
   position: fixed;
-  z-index: 11111;
-  bottom: 0px;
+  right: 0;
   top: 0;
-  right: unset;
-  left: calc(100vw - 453px);
-  width: 453px;
+  width: 400px;
   height: 100%;
-  padding-bottom: 24px;
-  background: rgb(255, 255, 255);
-  box-shadow: rgba(0, 0, 0, 0.08) 0px 16px 24px 6px;
-  direction: ltr;
-  user-select: none;
-  overflow-y: scroll;
-  opacity: 1;
-  transition: left 0.25s ease-in-out 0s, opacity 0.5s ease-in-out 0s;
+  background-color: #fff;
+  padding: 20px;
+  box-sizing: border-box;
+  transform: translateX(100%);
+  transition: transform .35s ease-out;
 }
 
 #sidebar.active {
-  display: flex !important;
+    transform: translateX(0);
 }
 
 #sidebar h1 {
@@ -76,29 +68,21 @@ body {
 }
 
 #mobilebar {
-  display: none;
-  flex-direction: column;
   position: fixed;
-  z-index: 11111;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  min-height: 70vh;
-  background-color: rgb(255, 255, 255);
-  box-shadow: rgba(0, 0, 0, 0.08) 0px 16px 24px 6px;
-  user-select: none;
-  overflow-y: auto;
-  opacity: 1;
-  transition: left 0.25s ease-in-out 0s, opacity 0.5s ease-in-out 0s;
-  border-top: 5px solid #3dc2c2;
-  border-top-right-radius: 10px;
-  border-top-left-radius: 10px;
+  right: 0;
+  bottom: 0; /* Change top to bottom */
+  width: 100%; /* Change width to full screen for mobile */
+  height: 75%; /* Adjust this value as needed */
+  background-color: #fff;
+  padding: 20px;
+  box-sizing: border-box;
+  transform: translateY(100%); /* Change translateX to translateY */
+  transition: transform .35s ease-out;
 }
 
 #mobilebar.active {
-  display: flex !important;
+    transform: translateY(0);
 }
-
 #mobilebar h1
 {
     text-align: center;
@@ -127,6 +111,7 @@ body {
   margin-top: 25px;
   display: flex;
   gap: 8px;
+  padding: 20px;
   -webkit-box-align: center;
   align-items: center;
   -webkit-box-pack: center;
@@ -138,32 +123,24 @@ body {
   font-size: 18px;
   line-height: 16px;
   color: rgb(255, 255, 255);
-  width: 75%;
+  width: 100%;
   cursor: pointer !important;
 }
 
 
 .close-sidebar-button {
-  display: flex;
-  -webkit-box-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  justify-content: center;
-  position: fixed;
-  right: unset;
-  left: calc(100vw - 495px);
-  width: 42px;
-  top: 11px;
-  height: 42px;
-  background: rgb(61 194 194);
-  border-radius: 5px 0px 0px 5px;
-  user-select: none;
-  border: 1px solid #3dc2c2;
-  color: #fff;
-  font-size: 22px;
-  cursor: pointer !important;
+  display:flex; 
+  align-items:center; 
+  justify-content:center; 
+  width:42px; 
+  height:42px; 
+  background-color:#3dc2c2; 
+  border-radius:5px; 
+  user-select:none; 
+  border:solid #3dc2c2; 
+  color:#fff; 
+  font-size:22px;  
 }
-
 #filter-buttons {
   position: absolute;
   top: 40px;
@@ -177,31 +154,31 @@ body {
   direction: ltr;
   gap: 10px;
   max-width: 80%;
-  user-select: none;
-  z-index: 111;
 }
 
 #filter-buttons button {
-  display: flex;
-  flex-direction: row;
-  -webkit-box-pack: center;
-  justify-content: center;
-  -webkit-box-align: center;
-  align-items: center;
-  padding: 0px 25px;
-  gap: 8px;
-  cursor: pointer;
-  width: auto;
-  height: 40px;
-  color: rgb(34, 34, 34);
-  background: rgb(255, 255, 255);
-  border: 1px solid rgb(255, 255, 255);
-  box-shadow: rgba(0, 0, 0, 0.08) 0px 16px 24px 6px;
-  border-radius: 32px;
-  transition: all 150ms ease-in-out 0s;
-  text-transform: capitalize;
+    display:flex; 
+    align-items:center; 
+    justify-content:center; 
+    padding-left :25px; 
+    padding-right :25px; 
+    gap :8px; 
+    cursor:pointer; 
+    width:auto; 
+    height :40px; 
+    color:#222222;  
+    background-color:#ffffff;  
+    border:solid #ffffff ;  
+    border-radius :32px ;  
+   transition :all .15s ease-in-out ;
+   text-transform :capitalize ;
+   box-shadow:0px 1px 1px rgba(0,0,0,0.2); /* Add a little shadow */
 }
 
+#filter-buttons button:hover {
+   background-color:#7cdfcb ; /* Change this to the color you want */
+   color:#ffffff ; /* Make text white */
+}
 #filter-buttons button img {
   max-height: 20px;
   width: 20px;

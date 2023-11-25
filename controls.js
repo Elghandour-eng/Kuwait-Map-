@@ -1,4 +1,3 @@
-// controls.js
 import { checkDevice } from './responsive_phone.js';
 
 export function addControls(map) {
@@ -26,8 +25,6 @@ export function addControls(map) {
   
   changeMapTypeDiv.innerHTML = "<button class='change-map-type' style='width:100%; height:100%'><img src='map/images/maptype.png'/></button>";
 
-
-
 if (checkDevice() === "Mobile Device") {
     zoomInDiv.style.width = '1px';
     zoomInDiv.style.height = '1px';
@@ -37,31 +34,47 @@ if (checkDevice() === "Mobile Device") {
     centerMapDiv.style.height = '1px';
     changeMapTypeDiv.style.width ='1px';
     changeMapTypeDiv.style.height ='1px'; 
-
-
 }
 
   // Setup click event listeners for all buttons
   google.maps.event.addDomListener(zoomInDiv, 'click', function() {
      map.setZoom(map.getZoom() + 1);
+     closeSidebars();
   });
 
   google.maps.event.addDomListener(zoomOutDiv, 'click', function() {
      map.setZoom(map.getZoom() - 1);
+     closeSidebars();
   });
 
   google.maps.event.addDomListener(centerMapDiv, 'click', function() {
      map.setCenter(new google.maps.LatLng(29.3759, 47.9774)); // Set this to your desired coordinates
      map.setZoom(8); // Set this to your desired zoom level
+     closeSidebars();
   });
 
  google.maps.event.addDomListener(changeMapTypeDiv, 'click', function() {
      var currentMapType = map.getMapTypeId();
      map.setMapTypeId(currentMapType === google.maps.MapTypeId.ROADMAP ? google.maps.MapTypeId.SATELLITE : google.maps.MapTypeId.ROADMAP);
+     closeSidebars();
   });
 
    // Add controls to different positions on the map
    map.controls[google.maps.ControlPosition.BOTTOM_LEFT].push(zoomDiv);
    map.controls[google.maps.ControlPosition.BOTTOM_LEFT].push(centerMapDiv);
    map.controls[google.maps.ControlPosition.BOTTOM_LEFT].push(changeMapTypeDiv);
+
+function closeSidebars() {
+    var sidebar = document.getElementById("sidebar");
+    var mobilebar = document.getElementById("mobilebar");
+
+    // Check if sidebars are active
+    if (sidebar.classList.contains('active')) {
+        sidebar.classList.remove('active');
+    }
+
+    if (mobilebar.classList.contains('active')) {
+        mobilebar.classList.remove('active');
+   }
+}
 }
