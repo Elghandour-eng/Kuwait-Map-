@@ -18,7 +18,6 @@ async function initialize() {
           {elementType: 'labels.text.fill', stylers: [{color: '#746855'}]},
         ],
         {name: 'Styled Map'},
-        gestureHandling: 'greedy'
         );
         
     var map = new google.maps.Map(document.getElementById("googleMap"), mapProperties);
