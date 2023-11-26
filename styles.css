@@ -22,10 +22,10 @@ body {
   position: fixed;
   right: 0;
   top: 0;
-  width: 400px;
+  width: 480px;
   height: 100%;
   background-color: #fff;
-  padding: 20px;
+  padding: 10px;
   box-sizing: border-box;
   transform: translateX(100%);
   transition: transform .35s ease-out;
@@ -53,8 +53,7 @@ body {
   text-align: center;
   font-size: 17px;
   line-height: 30px;
-  margin-top: 25px;
-  padding: 0 5%;
+  
 }
 #sidebar a {
   margin: auto;
@@ -190,8 +189,8 @@ div {
 
 #mobilebar.full 
 {
-  height: 100%;
-  transition: 1s ease-in;
+  height: 80%;
+  transition: .35s ease-in;
 }
 
 #mobilebar .mobilebar-img-des {
@@ -201,10 +200,10 @@ div {
 }
 
 #mobilebar .mobilebar-img-des img {
-  margin-top: 85px;
+  margin-top: 10px;
+  margin-bottom: 10px;
   height: 40%;
   width: 100%;
-  object-fit: cover;
 }
 
 
@@ -214,7 +213,7 @@ div {
   all: unset;
   border-radius: 5px;
   padding-right: 100px;
-  font-size: 50px;
+  font-size: 75px;
   color: black;
 }
 
@@ -228,6 +227,8 @@ div {
   -webkit-box-pack: justify;
   justify-content: space-between;
   align-items: center;
+  background-color: rgb(255, 255, 255);
+  box-shadow: rgba(0, 0, 0, 0.08) 0px 1px 1px 1px;
 }
 
 
@@ -250,9 +251,22 @@ div {
   align-items: center;
 }
 .scrollable-content {
-  position: relative;
+  max-height: calc(100vh - 90px);
   overflow-y: auto;
-  height: calc(100% - 60px); /* Adjust as needed */
+  padding-top: 90px;
+  word-wrap: break-word;
+  white-space: normal;
+}
+
+@media (max-width: 600px) {
+  .scrollable-content {
+    max-height: calc(100vh - 60px);
+    padding-top: 60px;
+    padding-left:10px;
+    padding-right:10px;
+    word-wrap: break-word;
+    white-space:normal;
+  }
 }
 .icon-top
 {
@@ -261,6 +275,7 @@ div {
   border-radius: 5px;
   padding: 15px;
   cursor: pointer;
+  size: 35px;
 }
 
 .icon-top img 
@@ -274,7 +289,7 @@ div {
 {
     display: flex;
     flex-direction: column;
-    padding: 0px 30px;
+    padding: 0px 10px;
 }
 
 /* .mobilebar-icon1
@@ -331,11 +346,8 @@ div {
 
 .mobilebar-con
 {
-  margin-top: 50px;
   font-size: 20px;
-  line-height: 10px;
   text-align: center;
-  margin-bottom: 50px;
 }
 
 

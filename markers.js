@@ -33,12 +33,25 @@ export function addMarkers(items, map, type) {
                 const mobilebar = document.getElementById("mobilebar");
 
                 sidebar.innerHTML =
-                    `<button class="close-sidebar-button">x</button>
-                     <h1>${item.title}</h1>
-                     <img src="${item.cover}" style="border-radius: 15px;padding: 12px">
-                     <p>${item.description}</p>
-                     <p>${item.content}</p>
-                     <a href="${item.url}" target='_blank'>استكشف المذيد</a>`;
+                    `
+                    <style>
+                        .scrollable-content {
+                            max-height: 100%; /* adjust this value according to your needs */
+                            overflow-y: auto;
+                        }
+                        </style>
+                        <div style="box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.1);">
+                        <button class="close-sidebar-button">x</button>
+                        <h1>${item.title}</h1>
+                        </div>
+                        <div class="scrollable-content">
+
+                        <img src="${item.cover}" style="border-radius: 15px;padding: 12px">
+                        <p>${item.description}</p>                     
+                        <p>${item.content}</p>
+                        <a href="${item.url}" target='_blank'>استكشف المذيد</a>
+                        </div>`;
+                     
 
                      mobilebar.innerHTML =
                      `
@@ -64,11 +77,11 @@ export function addMarkers(items, map, type) {
                          <div class="mobilbar-content">
                  
                              <div class="mobilebar-con">
-                                 <p>${item.content}</p>
                              </div>
                              <a href="${item.url}" target='_blank' class="mobilebar-button">استكشف المذيد</a>
                          </div> 
-                     </div>`;
+                     </div>
+                     `;
 
                 if (checkDevice() === "Mobile Device") {
                     mobilebar.classList.add("active");
