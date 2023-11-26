@@ -309,16 +309,6 @@ div {
 }
 
 
-{
-  width: 80px;
-  display: flex;
-  -webkit-box-pack: justify;
-  justify-content: space-between;
-  -webkit-box-align: center;
-  align-items: center;
-  margin-top: 12px;
-  direction: ltr;
-}
 
 
 .mobilebar-icon2
@@ -490,8 +480,8 @@ div {
 
 @media only screen and (max-width: 600px) {
   .zoom-in , .zoom-out {
-    width: 45px !important;
-    height: 45px !important;
+    width: 90px !important;
+    height: 90px !important;
     font-size: 80px;
   }
   
@@ -503,10 +493,11 @@ div {
   }
 
   .center-map {
-    width: 22px !important;
-    height: 22px !important;
+    width: 90px !important;
+    height: 90px !important;
     bottom: 87px;
     left: -54px;
+    font-size: 80px;
    }
 
    .change-map-type {
