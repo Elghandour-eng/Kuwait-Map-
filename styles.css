@@ -194,14 +194,17 @@ div {
   transition: 1s ease-in;
 }
 
-#mobilebar .mobilebar-img-des img
-{
-    margin: 100px auto;
-    height: 40%;
-    width: 100%;
-    object-fit: cover;
-    margin-left: auto;
-    margin-right: auto;
+#mobilebar .mobilebar-img-des {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#mobilebar .mobilebar-img-des img {
+  margin-top: 85px;
+  height: 40%;
+  width: 100%;
+  object-fit: cover;
 }
 
 
