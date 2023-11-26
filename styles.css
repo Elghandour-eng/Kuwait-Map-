@@ -230,11 +230,12 @@ div {
 
 .mobilebar-header h1
 {
-  font-size: 25px;
+  font-size: 35px;
   line-height: 21px;
   max-width: 100%;
   padding: 0 5%;
   color: rgb(34, 34, 34);
+  font-weight: 700;
 }
 
 
