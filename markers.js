@@ -111,8 +111,8 @@ export function addMarkers(items, map, type) {
                         if(navigator.share) {
                             const shareData = {
                             title: item.title,
-                            text: item.description,
-                            url: item.url
+                            text: item.title,
+                            url: item.url,
                             };
                             await navigator.share(shareData);
                             console.log('Share Successful');
