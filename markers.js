@@ -113,6 +113,7 @@ export function addMarkers(items, map, type) {
                             title: item.title,
                             text: item.title,
                             url: item.url,
+                            
                             };
                             await navigator.share(shareData);
                             console.log('Share Successful');
