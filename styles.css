@@ -134,6 +134,12 @@ body {
   width: 20px;
 }
 
+@media (max-width: 600px) {
+  #filter-buttons button img {
+    max-height: 60px;
+    width: 60px;
+  }
+}
 
 
 .controlDivStyle {
@@ -271,6 +277,17 @@ div {
 .icon-top
 {
   all: unset;
+  background-color:#fff;
+  border-radius: 5px;
+  padding: 15px;
+  cursor: pointer;
+  size: 35px;
+  box-shadow: rgba(0, 0, 0.1, 0.1) 0px 2px 2px 2px;
+}
+
+.share-top
+{
+  all: unset;
   background-color: rgb(237, 237, 237);
   border-radius: 5px;
   padding: 15px;
@@ -278,11 +295,10 @@ div {
   size: 35px;
 }
 
-.icon-top img 
-{
-   width: 20px;
-   height: 20px;
-}
+
+
+
+
 
 
 .mobilbar-content
@@ -292,7 +308,7 @@ div {
     padding: 0px 10px;
 }
 
-/* .mobilebar-icon1
+
 {
   width: 80px;
   display: flex;
@@ -372,11 +388,6 @@ div {
 
 
 /* //////////////////////////////////// zoom controls ///////////////////////////////////////////// */
-
-
-
-
-
 .zoom-in , .zoom-out
 {
   background: #fff;
@@ -385,7 +396,7 @@ div {
   width: 30px !important;
   cursor: pointer !important;
   height: 30px !important;
-  font-size: 24px;
+  font-size: 38px;
   padding: auto;
 }
 .zoom-out
@@ -476,6 +487,40 @@ div {
     min-height: 100%;
     max-height: 100%;
 }
+
+@media only screen and (max-width: 600px) {
+  .zoom-in , .zoom-out {
+    width: 45px !important;
+    height: 45px !important;
+    font-size: 80px;
+  }
+  
+  .zoom-controls {
+    left: 40px !important;
+    bottom: 32px !important;
+    width: 32px;
+    height: 80px;
+  }
+
+  .center-map {
+    width: 22px !important;
+    height: 22px !important;
+    bottom: 87px;
+    left: -54px;
+   }
+
+   .change-map-type {
+     width:32px !important; 
+     height:32px !important; 
+     left:-21px; 
+     bottom :33px; 
+   }
+}
+
+
+
+
+/*////////////////////////////////////////////////////////////////// */
 @media only screen and (max-width: 769px) {
 #sidebar {
   left: calc(100vw - 70%);
@@ -499,14 +544,14 @@ div {
   flex: 0 0 auto;
 }
 #filter-buttons button {
-  font-size: 20px;
-}
+  font-size: 30px;
+  padding: 10px 20px;}
 }
 
 @media only screen and (max-width: 600px) {
   #filter-buttons button {
     padding: 10px 20px;
-    font-size: 14px;
+    font-size: 35px;
     height: auto;
   }
   

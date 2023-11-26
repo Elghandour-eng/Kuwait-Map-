@@ -20,11 +20,6 @@ export function addMarkers(items, map, type) {
             type // Add the type here
         });
 
-
-
-
-
-
         google.maps.event.addListener(
             marker,
             "click",
@@ -43,8 +38,11 @@ export function addMarkers(items, map, type) {
                         <div style="box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.1);">
                         <button class="close-sidebar-button">x</button>
                         <h1>${item.title}</h1>
+                        
+
                         </div>
                         <div class="scrollable-content">
+
 
                         <img src="${item.cover}" style="border-radius: 15px;padding: 12px">
                         <p>${item.description}</p>                     
@@ -56,14 +54,17 @@ export function addMarkers(items, map, type) {
                      mobilebar.innerHTML =
                      `
                      <div class="mobilebar-header">
-                         <h1>${item.title}</h1>
-                         <div class="mobile-header-icons">
-                            <button class="icon-top">
-                                <img src="images/arrow_top.svg">
-                            </button>
-                            <button class="close-sidebar-mobile">x</button>
-                         </div>
+                     <h1>${item.title}</h1>
+                     <div class="mobile-header-icons">
+                     <button class="share-top" id ="shareBtn">
+                     <img src="map/images/share.svg">
+                 </button>
+                         <button class="icon-top" style="position: absolute; top: 0; left: 50%; transform: translateX(-50%);">
+                             <img src="map/images/arrow_top.svg">
+                         </button>
+                         <button class="close-sidebar-mobile">x</button>
                      </div>
+                 </div>
                  
                      <div class="scrollable-content"> <!-- Wrap your scrollable content in a div -->
                          <div class="mobilebar-img-des">
@@ -80,8 +81,7 @@ export function addMarkers(items, map, type) {
                              </div>
                              <a href="${item.url}" target='_blank' class="mobilebar-button">استكشف المذيد</a>
                          </div> 
-                     </div>
-                     `;
+                     </div>`;
 
                 if (checkDevice() === "Mobile Device") {
                     mobilebar.classList.add("active");
@@ -106,38 +106,26 @@ export function addMarkers(items, map, type) {
                   });
                 }
 
+                const shareBtn = document.querySelector('#shareBtn');
+                    if (shareBtn) {
+                      shareBtn.onclick = async function() {
+                        if(navigator.share) {
+                            const shareData = {
+                            title: 'Web Share Demo',
+                            text: 'This is some text I wanted to share',
+                            url: 'https://josephkhan.me'
+                            };
+                            await navigator.share(shareData);
+                            console.log('Share Successful');
+                        } else {
+                            alert('Web Share not supported');
+                        }
+                      }
+                    }
+
             }
         );
         markers.push(marker);
     }
     return markers;
 }
-
-
-
-
-
-
-
-
-// ////////////////////////////////////////
-
-
-
-
-
-
-
-
-// const iconTops = document.querySelectorAll('.icon-top');
-
-
-// iconTops.forEach(iconTop => {
-//     iconTop.addEventListener('click', function() {
-
-//         const parentElement = this.parentNode; 
-
-      
-//         parentElement.style.height = '100%';
-//     });
-// });
