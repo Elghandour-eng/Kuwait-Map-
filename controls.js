@@ -26,14 +26,14 @@ export function addControls(map) {
   changeMapTypeDiv.innerHTML = "<button class='change-map-type' style='width:100%; height:100%'><img src='map/images/maptype.png'/></button>";
 
 if (checkDevice() === "Mobile Device") {
-    zoomInDiv.style.width = '1px';
-    zoomInDiv.style.height = '1px';
-    zoomOutDiv.style.width = '1px';
-    zoomOutDiv.style.height = '1px';
-    centerMapDiv.style.width = '1px';
-    centerMapDiv.style.height = '1px';
-    changeMapTypeDiv.style.width ='1px';
-    changeMapTypeDiv.style.height ='1px'; 
+    zoomInDiv.style.width = '90px';
+    zoomInDiv.style.height = '90px';
+    zoomOutDiv.style.width = '90px';
+    zoomOutDiv.style.height = '90px';
+    centerMapDiv.style.width = '90px';
+    centerMapDiv.style.height = '90px';
+    changeMapTypeDiv.style.width ='90px';
+    changeMapTypeDiv.style.height ='90px'; 
 }
 
   // Setup click event listeners for all buttons

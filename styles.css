@@ -200,6 +200,8 @@ div {
     height: 40%;
     width: 100%;
     object-fit: cover;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 

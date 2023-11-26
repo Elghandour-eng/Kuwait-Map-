@@ -13,24 +13,18 @@ export function addMarkers(items, map, type) {
                 url: "map/images/marker.svg",
                 scaledSize: checkDevice() == "Mobile Device" ?  new google.maps.Size(60, 60) : new google.maps.Size(30, 30),
                 origin: new google.maps.Point(0, 0),
+                anchor: new google.maps.Point(15, 30),
+                labelOrigin: new google.maps.Point(15, 15),
+                
             },
             type // Add the type here
         });
-/*
-        var infowindow = new google.maps.InfoWindow({
-          content: 'Your content string',
-          closeBoxURL: "", // this will remove close ('x') button.
-          disableAutoPan: true 
-        });
 
-        marker.addListener("mouseover", () => {
-            infowindow.open(map, marker);
-        });
 
-        marker.addListener("mouseout", () => {
-            infowindow.close(map, marker);
-        });
-*/
+
+
+
+
         google.maps.event.addListener(
             marker,
             "click",
