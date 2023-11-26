@@ -67,16 +67,15 @@ export function addMarkers(items, map, type) {
                  </div>
                  
                      <div class="scrollable-content"> <!-- Wrap your scrollable content in a div -->
-                         <div class="mobilebar-img-des">
-                             <img src="${item.cover}" alt="Image" style="border-radius: 15px;padding: 12px">
-                 
-                             <div class="mobilebar-des">
-                                 <p>${item.description}</p>
-                             </div>
+                     <div class="mobilebar-img-des">
+                         <img src="${item.cover}" alt="Image">
                          </div>
-                 
+                         <div class="mobilebar-des">
+                             <p>${item.description}</p>
+                         </div>
+
                          <div class="mobilbar-content">
-                 
+
                              <div class="mobilebar-con">
                              </div>
                              <a href="${item.url}" target='_blank' class="mobilebar-button">استكشف المذيد</a>
@@ -111,9 +110,9 @@ export function addMarkers(items, map, type) {
                       shareBtn.onclick = async function() {
                         if(navigator.share) {
                             const shareData = {
-                            title: 'Web Share Demo',
-                            text: 'This is some text I wanted to share',
-                            url: 'https://josephkhan.me'
+                            title: item.title,
+                            text: item.description,
+                            url: item.url
                             };
                             await navigator.share(shareData);
                             console.log('Share Successful');

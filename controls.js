@@ -1,4 +1,3 @@
-import { checkDevice } from './responsive_phone.js';
 
 export function addControls(map) {
    // Create a div for each control.
