@@ -31,7 +31,7 @@ async function initialize() {
         map.setOptions({ zoom: 9.8  });
     } else {
         
-       // drawPolygon(map);
+       drawPolygon(map);
     }
 
     await fetch("https://visitmykuwait.co/api/v1/map-content")
