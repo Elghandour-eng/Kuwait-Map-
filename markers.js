@@ -40,37 +40,35 @@ export function addMarkers(items, map, type) {
                      <p>${item.content}</p>
                      <a href="${item.url}" target='_blank'>استكشف المذيد</a>`;
 
-                mobilebar.innerHTML =
-                    `
-                    
-                    <div class="mobilebar-header">
-                        <h1>${item.title}</h1>
-                        <div class="mobile-header-icons">
-                           <button class="icon-top">
-                               <img src="images/arrow_top.svg">
-                           </button>
-                           <button class="close-sidebar-mobile">x</button>
-                        </div>
-                    </div>
-                    
-                      <div class="mobilebar-img-des">
-                      <img src="${item.cover}" alt="Image" style="border-radius: 15px;padding: 12px">
-
-
-                      <div class="mobilebar-des">
-                          <p>${item.description}</p>
-                      </div>
-                      </div>
-
-                    <div class="mobilbar-content">
-
-                      <div class="mobilebar-con">
-                            <p>${item.content}</p>
-                      </div>
-                          <a href="${item.url}" target='_blank' class="mobilebar-button">استكشف المذيد</a>
-                    </div>
-                      
-                    `; 
+                     mobilebar.innerHTML =
+                     `
+                     <div class="mobilebar-header">
+                         <h1>${item.title}</h1>
+                         <div class="mobile-header-icons">
+                            <button class="icon-top">
+                                <img src="images/arrow_top.svg">
+                            </button>
+                            <button class="close-sidebar-mobile">x</button>
+                         </div>
+                     </div>
+                 
+                     <div class="scrollable-content"> <!-- Wrap your scrollable content in a div -->
+                         <div class="mobilebar-img-des">
+                             <img src="${item.cover}" alt="Image" style="border-radius: 15px;padding: 12px">
+                 
+                             <div class="mobilebar-des">
+                                 <p>${item.description}</p>
+                             </div>
+                         </div>
+                 
+                         <div class="mobilbar-content">
+                 
+                             <div class="mobilebar-con">
+                                 <p>${item.content}</p>
+                             </div>
+                             <a href="${item.url}" target='_blank' class="mobilebar-button">استكشف المذيد</a>
+                         </div> 
+                     </div>`;
 
                 if (checkDevice() === "Mobile Device") {
                     mobilebar.classList.add("active");

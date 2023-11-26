@@ -249,7 +249,11 @@ div {
   -webkit-box-align: center;
   align-items: center;
 }
-
+.scrollable-content {
+  position: relative;
+  overflow-y: auto;
+  height: calc(100% - 60px); /* Adjust as needed */
+}
 .icon-top
 {
   all: unset;
