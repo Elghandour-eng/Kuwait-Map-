@@ -16,7 +16,7 @@ export function addMarkers(items, map, type) {
             },
             type // Add the type here
         });
-
+/*
         var infowindow = new google.maps.InfoWindow({
           content: 'Your content string',
           closeBoxURL: "", // this will remove close ('x') button.
@@ -30,7 +30,7 @@ export function addMarkers(items, map, type) {
         marker.addListener("mouseout", () => {
             infowindow.close(map, marker);
         });
-
+*/
         google.maps.event.addListener(
             marker,
             "click",
@@ -47,14 +47,36 @@ export function addMarkers(items, map, type) {
                      <a href="${item.url}" target='_blank'>استكشف المذيد</a>`;
 
                 mobilebar.innerHTML =
-                    `<button class="close-sidebar-mobile">x</button>
-                     <h1>${item.title}</h1>
+                    `
                     
-                    <img src="${item.cover}" alt="Image" style="border-radius: 15px;padding: 12px">
-                
-                      <p>${item.description}</p>
-                      <p>${item.content}</p>
-                      <a href="${item.url}" target='_blank'>استكشف المذيد</a>`;     
+                    <div class="mobilebar-header">
+                        <h1>${item.title}</h1>
+                        <div class="mobile-header-icons">
+                           <button class="icon-top">
+                               <img src="images/arrow_top.svg">
+                           </button>
+                           <button class="close-sidebar-mobile">x</button>
+                        </div>
+                    </div>
+                    
+                      <div class="mobilebar-img-des">
+                      <img src="${item.cover}" alt="Image" style="border-radius: 15px;padding: 12px">
+
+
+                      <div class="mobilebar-des">
+                          <p>${item.description}</p>
+                      </div>
+                      </div>
+
+                    <div class="mobilbar-content">
+
+                      <div class="mobilebar-con">
+                            <p>${item.content}</p>
+                      </div>
+                          <a href="${item.url}" target='_blank' class="mobilebar-button">استكشف المذيد</a>
+                    </div>
+                      
+                    `; 
 
                 if (checkDevice() === "Mobile Device") {
                     mobilebar.classList.add("active");
@@ -67,11 +89,50 @@ export function addMarkers(items, map, type) {
                 });
 
                 mobilebar.querySelector(".close-sidebar-mobile").addEventListener("click", () => {
-                    mobilebar.classList.remove("active"); 
+                    mobilebar.classList.remove("active");
+                    mobilebar.classList.remove("full"); 
                 });
+
+// /////////////////////////////////////////
+                const iconTopButton = mobilebar.querySelector('.icon-top');
+                if (iconTopButton) { 
+                  iconTopButton.addEventListener('click', () => {
+                      mobilebar.classList.toggle('full');
+                  });
+                }
+
             }
         );
         markers.push(marker);
     }
     return markers;
 }
+
+
+
+
+
+
+
+
+// ////////////////////////////////////////
+
+
+
+
+
+
+
+
+// const iconTops = document.querySelectorAll('.icon-top');
+
+
+// iconTops.forEach(iconTop => {
+//     iconTop.addEventListener('click', function() {
+
+//         const parentElement = this.parentNode; 
+
+      
+//         parentElement.style.height = '100%';
+//     });
+// });

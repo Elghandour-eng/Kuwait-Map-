@@ -26,7 +26,7 @@ export  async function drawPolygon(map) {
 
 
                 polygon.addListener("mouseover", () => {
-                    polygons.forEach(poly => poly.setOptions({ fillColor:"#7cdfcb", fillOpacity: .35 }));
+                    polygons.forEach(poly => poly.setOptions({ fillColor:"#7cdfcb", fillOpacity: .2 }));
                 });
 
                 polygon.addListener("mouseout", () => {
