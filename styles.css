@@ -9,6 +9,7 @@ body {
 #filter-buttons {
   overflow-x: auto;
   white-space: nowrap;
+  height: 80px ;
 }
 #filter-buttons button {
   display: inline-block;
@@ -46,7 +47,7 @@ body {
 #sidebar img {
   margin-top: 25px;
   height: 254px;
-  width: 100%;
+  width: 90%;
   object-fit: cover;
 }
 #sidebar p {
@@ -103,7 +104,8 @@ body {
   height: auto;
   direction: ltr;
   gap: 10px;
-  max-width: 80%;
+  max-width: 90%;
+  height: 75px;
 }
 
 #filter-buttons button {
@@ -122,11 +124,15 @@ body {
     border-radius :32px ;  
    transition :all .15s ease-in-out ;
    text-transform :capitalize ;
-   box-shadow:0px 1px 1px rgba(0,0,0,0.2); /* Add a little shadow */
+   box-shadow:1px 1px 1px rgba(0,0,0,0.4); /* Add a little shadow */
+}
+
+#filter-buttons button:hover img {
+  filter: brightness(0) invert(1);
 }
 
 #filter-buttons button:hover {
-   background-color:#7cdfcb ; /* Change this to the color you want */
+   background-color:#00a7e1 ; /* Change this to the color you want */
    color:#ffffff ; /* Make text white */
 }
 #filter-buttons button img {
@@ -180,7 +186,7 @@ div {
   right: 0;
   bottom: 0; 
   width: 100%; 
-  height: 10%; 
+  height: 65%; 
   background-color: #fff;
   padding: 20px;
   box-sizing: border-box;
@@ -261,7 +267,7 @@ div {
 .scrollable-content {
   max-height: calc(100vh - 90px);
   overflow-y: auto;
-  padding-top: 90px;
+  padding-top: 10px;
   word-wrap: break-word;
   white-space: normal;
 }

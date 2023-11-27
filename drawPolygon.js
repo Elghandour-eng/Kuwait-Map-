@@ -17,7 +17,7 @@ export  async function drawPolygon(map) {
                     paths,
                     strokeColor: "#7cdfcb",
                     strokeOpacity: 0.9,
-                    strokeWeight: 3,
+                    strokeWeight: 0,
                     fillColor: "#000000", // Initial fill color is black
                     fillOpacity: 0, // Initial fill opacity is 0 (transparent)
                 });

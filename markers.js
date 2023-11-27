@@ -49,8 +49,11 @@ export function addMarkers(items, map, type) {
                         <p>${item.content}</p>
                         <a href="${item.url}" target='_blank'>استكشف المذيد</a>
                         </div>`;
-                     
-
+                     /*
+                        <button class="icon-top" style="position: absolute; top: 0; left: 50%; transform: translateX(-50%);">
+                        <img src="map/images/arrow_top.svg">
+                    </button>
+                    */
                      mobilebar.innerHTML =
                      `
                      <div class="mobilebar-header">
@@ -59,9 +62,8 @@ export function addMarkers(items, map, type) {
                      <button class="share-top" id ="shareBtn">
                      <img src="map/images/share.svg">
                  </button>
-                         <button class="icon-top" style="position: absolute; top: 0; left: 50%; transform: translateX(-50%);">
-                             <img src="map/images/arrow_top.svg">
-                         </button>
+                 
+  
                          <button class="close-sidebar-mobile">x</button>
                      </div>
                  </div>
