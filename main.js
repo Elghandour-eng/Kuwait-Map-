@@ -9,7 +9,7 @@ import { addControls } from './controls.js';
 
 let markers = []; 
 
-async function initialize() {
+export  async function initialize() {
 
     var styledMapType = new google.maps.StyledMapType(
         [
