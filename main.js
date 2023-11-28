@@ -9,7 +9,13 @@ import { addControls } from './controls.js';
 
 let markers = []; 
 
-export  async function initialize() {
+async function initialize() {
+
+        // Check if google.maps.OverlayView is loaded
+        if (typeof google.maps.OverlayView === 'undefined') {
+            alert('Google Maps API has not fully loaded yet.');
+            return;
+        }
 
     var styledMapType = new google.maps.StyledMapType(
         [
