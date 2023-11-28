@@ -76,6 +76,8 @@ export function addMarkers(items, map, type) {
             type // Add the type here
         });
 
+
+
         google.maps.event.addListener(
             marker,
             "click",
@@ -219,18 +221,31 @@ export function addMarkers(items, map, type) {
 
             }
         );
-
-
+///////////////////////////////////////////////////////////////////
+ 
 
         marker.addListener('mouseover', function() {
           // Close any existing info window
           if (infoWindow) infoWindow.setMap(null);
         
   // Create a new custom info window
+
+  var added_cin = '';
+  if (marker.type == "offer") {
+    added_cin = '<p>'+item.phone+'</p>';
+  } else if (marker.type == "event") {
+    added_cin = '<p>'+item.date+'</p>';
+  }else if (marker.type == "article") {
+    added_cin = '<p></p>';}
+    else{
+      added_cin = '<p></p>';
+    }
+
   var contentString =
       '<div id="content" style="background-color: white; padding: 10px;">'+
       '<h1>'+item.title+'</h1>'+
       '<p>'+item.description+'</p>'+
+        added_cin+  
       '</div>';
           
           infoWindow = new CustomInfoWindow(marker.getPosition(), contentString);
