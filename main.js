@@ -8,6 +8,7 @@ import { addControls } from './controls.js';
 
 
 let markers = []; 
+let OverlayView;
 
 async function initialize() {
 
@@ -23,9 +24,9 @@ async function initialize() {
         ],
         {name: 'Styled Map'},
         );
-        var overlay = new google.maps.OverlayView();
         
     var map = new google.maps.Map(document.getElementById("googleMap"), mapProperties);
+    OverlayView = google.maps.OverlayView;
     map.mapTypes.set('styled_map', styledMapType);
 
     // Add zoom in and out controls

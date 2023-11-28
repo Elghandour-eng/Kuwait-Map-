@@ -266,24 +266,26 @@ div {
   -webkit-box-align: center;
   align-items: center;
 }
+
 .scrollable-content {
-  max-height: calc(100vh - 90px);
+  max-height: calc(100% - 100px);
   overflow-y: auto;
-  padding-top: 10px;
   word-wrap: break-word;
   white-space: normal;
 }
 
+
+
+
 @media (max-width: 600px) {
   .scrollable-content {
-    max-height: calc(100vh - 60px);
-    padding-top: 60px;
-    padding-left:10px;
-    padding-right:10px;
+    max-height: calc(100vh - 100px);
+    overflow-y: auto;
     word-wrap: break-word;
     white-space:normal;
   }
 }
+
 .icon-top
 {
   all: unset;
@@ -563,4 +565,72 @@ div {
     width: auto;
     height: auto;
   }
+}
+
+
+
+/*///////////////////////// content-marker /////////////////////////////////// */
+
+#content-marker
+{
+  background-color: white;
+  padding: 10px;
+}
+
+#content-marker h1 
+{
+  text-align: center;
+}
+/* //////////////////////////////// */
+.marker-location
+{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.marker-location i 
+{
+  color: rgb(172, 172, 172);
+}
+
+.marker-location p
+{
+  color: rgb(29, 29, 29);
+}
+
+/* ///////////////////////////////////////// */
+.marker-calendar
+{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.marker-calendar i 
+{
+  color: rgb(172, 172, 172);
+}
+
+.marker-calendar p
+{
+  color: rgb(29, 29, 29);
+}
+
+/* ////////////////////////////////// */
+.marker-phone
+{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.marker-phone i 
+{
+  color: rgb(172, 172, 172);
+}
+
+.marker-phone p
+{
+  color: rgb(29, 29, 29);
 }
