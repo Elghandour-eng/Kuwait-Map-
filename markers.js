@@ -1,7 +1,7 @@
 import { checkDevice } from './responsive_phone.js';
 
 
-
+/*
 function CustomInfoWindow(position, content) {
     google.maps.OverlayView.call(this);
     this.position = position;
@@ -31,13 +31,13 @@ CustomInfoWindow.prototype.draw = function() {
 };
 
 CustomInfoWindow.prototype.onRemove= function() {
-  if (this.div) {
-      this.div.parentNode.removeChild(this.div);
-      delete this.div;
-  }
+if (this.div) {
+    this.div.parentNode.removeChild(this.div);
+    delete this.div;
+}
 };
 
-
+*/
 
 
 
@@ -224,7 +224,7 @@ export function addMarkers(items, map, type) {
         );
 ///////////////////////////////////////////////////////////////////
  
-
+/*
         marker.addListener('mouseover', function() {
           // Close any existing info window
           if (infoWindow) infoWindow.setMap(null);
@@ -260,6 +260,8 @@ export function addMarkers(items, map, type) {
         marker.addListener('mouseout', function() {
           if (infoWindow) infoWindow.setMap(null);
         });
+
+        */
                 markers.push(marker);
     }
     return markers;
