@@ -232,7 +232,10 @@ export function addMarkers(items, map, type) {
 
   var added_cin = '';
   if (marker.type == "offer") {
-    added_cin = '<p>'+item.phone+'</p>';
+    if (item.phone) {
+        added_cin = '<p>' + item.phone + '</p>';
+      }
+    
   } else if (marker.type == "event") {
     added_cin = '<p>'+item.date+'</p>';
   }else if (marker.type == "article") {
