@@ -12,7 +12,7 @@ let markers = [];
 async function initialize() {
 
         // Check if google.maps.OverlayView is loaded
-        overlay = new google.maps.OverlayView();
+        
 
 
     var styledMapType = new google.maps.StyledMapType(
@@ -23,6 +23,7 @@ async function initialize() {
         ],
         {name: 'Styled Map'},
         );
+        var overlay = new google.maps.OverlayView();
         
     var map = new google.maps.Map(document.getElementById("googleMap"), mapProperties);
     map.mapTypes.set('styled_map', styledMapType);

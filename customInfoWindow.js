@@ -1,4 +1,4 @@
-export default async function CustomInfoWindow(position, content) {
+export  async function CustomInfoWindow(position, content) {
     google.maps.OverlayView.call(this);
     this.position = position;
     this.content = content;
