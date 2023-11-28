@@ -12,10 +12,8 @@ let markers = [];
 async function initialize() {
 
         // Check if google.maps.OverlayView is loaded
-        if (typeof google.maps.OverlayView === 'undefined') {
-            alert('Google Maps API has not fully loaded yet.');
-            return;
-        }
+        overlay = new google.maps.OverlayView();
+
 
     var styledMapType = new google.maps.StyledMapType(
         [
