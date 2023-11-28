@@ -3,7 +3,7 @@ import { checkDevice } from "./responsive_phone.js";
 
 
 
-let infoWindow;
+//let infoWindow;
 let activeMarker = null;
 
 export function addMarkers(items, map, type) {
@@ -84,6 +84,8 @@ export function addMarkers(items, map, type) {
 
                     </div>`;
 
+
+
       /*
                         <button class="icon-top" style="position: absolute; top: 0; left: 50%; transform: translateX(-50%);">
                         <img src="map/images/arrow_top.svg">
@@ -163,6 +165,9 @@ export function addMarkers(items, map, type) {
           }
         };
       }
+
+    
+      
     });
     ///////////////////////////////////////////////////////////////////
 

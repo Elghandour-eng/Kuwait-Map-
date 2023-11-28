@@ -12,18 +12,10 @@ let markers = [];
 export  async function initialize() {
 
     
-            var styledMapType = new google.maps.StyledMapType(
-                [
-                  {elementType: 'geometry', stylers: [{color: '#242f3e'}]},
-                  {elementType: 'labels.text.stroke', stylers: [{color: '#242f3e'}]},
-                  {elementType: 'labels.text.fill', stylers: [{color: '#746855'}]},
-                ],
-                {name: 'Styled Map'},
-                );
+
                 
                 
             var map = new google.maps.Map(document.getElementById("googleMap"), mapProperties);
-            map.mapTypes.set('styled_map', styledMapType);
         
             // Add zoom in and out controls
             addControls(map);
@@ -108,11 +100,12 @@ export  async function initialize() {
             if (mobilebar.classList.contains('active')) {
                 mobilebar.classList.remove('active');
             }
+
         });
 }
 
 window.initialize = initialize;
-
+/*
 // Rest of your code...
 class CustomInfoWindow extends google.maps.OverlayView{
     constructor(position, content) {
@@ -165,7 +158,7 @@ function waitForOverlayView() {
 
 
 
-
+*/
 
 
 

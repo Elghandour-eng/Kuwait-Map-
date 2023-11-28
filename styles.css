@@ -188,7 +188,7 @@ div {
   width: 100%; 
   height: 55%; 
   background-color: #fff;
-  padding: 20px;
+  padding: 0px;
   box-sizing: border-box;
   transform: translateY(100%); 
   transition: transform .35s ease-out;
@@ -245,6 +245,7 @@ div {
   align-items: center;
   background-color: rgb(255, 255, 255);
   box-shadow: rgba(0, 0, 0, 0.08) 0px 1px 1px 1px;
+  padding: 10px 0px;
 }
 
 
@@ -268,7 +269,7 @@ div {
 }
 
 .scrollable-content {
-  max-height: calc(100% - 100px);
+  max-height: calc(100% - 15px);
   overflow-y: auto;
   word-wrap: break-word;
   white-space: normal;
