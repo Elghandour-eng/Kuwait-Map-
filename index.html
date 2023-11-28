@@ -8,14 +8,13 @@
 <!--Font Family-->
 <link href="https://fonts.cdnfonts.com/css/lama-sans" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
-<script type="module" src="main.js"></script> 
 </head>
 
 <style>
 
 </style>
 
-<body onload="initialize()">
+<body>
 
 <div id="googleMap"></div>
 
@@ -34,17 +33,13 @@
         All</button>
 </div>
 
-
-
-
-
-
 <!-- Load Google Maps JavaScript API with a callback function -->
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAK6gkEZylfNzt_iQ-iI5lfBdSc5w60PTA" async defer></script>
+<script src='https://maps.googleapis.com/maps/api/js?key=AIzaSyAK6gkEZylfNzt_iQ-iI5lfBdSc5w60PTA&callback=initialize' async defer></script>
 
+<script type='module' src='main.js'></script> 
 
-<div id="sidebar"></div>
-<div id="mobilebar"></div>
+<div id='sidebar'></div>
+<div id='mobilebar'></div>
 
 
 </body>
