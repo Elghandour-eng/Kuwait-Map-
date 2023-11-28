@@ -72,7 +72,7 @@ export function addMarkers(items, map, type) {
                     
 
                     </div>
-                    <div class="scrollable-content">
+                    <div class="scrollable-content_site">
 
 
                     <img src="${item.cover}" style="border-radius: 15px;padding: 12px">
@@ -104,7 +104,7 @@ export function addMarkers(items, map, type) {
                      </div>
                  </div>
                  
-                     <div class="scrollable-content"> 
+                     <div class="scrollable-content_mobile"> 
                      <div class="mobilebar-img-des">
                          <img src="${item.cover}" alt="Image">
                          </div>
