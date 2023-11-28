@@ -166,7 +166,7 @@ export function addMarkers(items, map, type) {
     });
     ///////////////////////////////////////////////////////////////////
 
-    marker.addListener("mouseover", function () {
+    /* marker.addListener("mouseover", function () {
       // Close any existing info window
       if (infoWindow) infoWindow.setMap(null);
 
@@ -215,7 +215,7 @@ export function addMarkers(items, map, type) {
 
     marker.addListener("mouseout", function () {
       if (infoWindow) infoWindow.setMap(null);
-    });
+    });  */
     markers.push(marker);
   }
   return markers;
