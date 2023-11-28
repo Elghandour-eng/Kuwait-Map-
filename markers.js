@@ -1,4 +1,5 @@
 import { checkDevice } from "./responsive_phone.js";
+import { CustomInfoWindow } from "./customInfoWindow.js";
 
 
 
