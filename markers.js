@@ -1,5 +1,5 @@
 import { checkDevice } from './responsive_phone.js';
-
+let infowindow = new google.maps.InfoWindow(); // Create one InfoWindow
 let activeMarker = null;
 
 export function addMarkers(items, map, type) {
@@ -58,6 +58,13 @@ export function addMarkers(items, map, type) {
 
                 var sidebar = document.getElementById("sidebar");
                 const mobilebar = document.getElementById("mobilebar");
+                
+
+
+
+                
+
+
 
                 sidebar.innerHTML =
                     `
@@ -156,10 +163,29 @@ export function addMarkers(items, map, type) {
                         }
                       }
                     }
+      
+
 
             }
         );
-        markers.push(marker);
+
+
+        // Create a content string for the info window
+        var contentString = '<div id="content">'+
+        '<h1>'+item.title+'</h1>'+
+        '<p>'+item.description+'</p>'+
+        '</div>';
+
+        // Add mouseover and mouseout events for the marker
+        marker.addListener('mouseover', function() {
+            infowindow.setContent(contentString);
+            infowindow.open(map, this);
+        });
+
+        marker.addListener('mouseout', function() {
+            infowindow.close();
+        });
+                markers.push(marker);
     }
     return markers;
 }
