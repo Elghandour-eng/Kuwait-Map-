@@ -241,6 +241,7 @@ export function addMarkers(items, map, type) {
   }else if (marker.type == "article") {
     added_cin = '<p></p>';}
     else{
+        
       added_cin = '<p></p>';
     }
 
