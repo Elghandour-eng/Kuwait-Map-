@@ -8,14 +8,30 @@ import { addControls } from './controls.js';
 
 
 let markers = []; 
-let OverlayView;
+
+
+
+function waitForOverlayView() {
+    return new Promise((resolve) => {
+      if (typeof google.maps.OverlayView !== 'undefined') {
+        resolve();
+      } else {
+        const checkInterval = setInterval(() => {
+          if (typeof google.maps.OverlayView !== 'undefined') {
+            clearInterval(checkInterval);
+            resolve();
+          }
+        }, 100); // Check every 100ms
+      }
+    });
+  }
 
 async function initialize() {
 
         // Check if google.maps.OverlayView is loaded
         
 
-
+    
     var styledMapType = new google.maps.StyledMapType(
         [
           {elementType: 'geometry', stylers: [{color: '#242f3e'}]},
@@ -25,8 +41,8 @@ async function initialize() {
         {name: 'Styled Map'},
         );
         
+        
     var map = new google.maps.Map(document.getElementById("googleMap"), mapProperties);
-    OverlayView = google.maps.OverlayView;
     map.mapTypes.set('styled_map', styledMapType);
 
     // Add zoom in and out controls
@@ -39,7 +55,7 @@ async function initialize() {
         
        drawPolygon(map);
     }
-
+    waitForOverlayView();
     await fetch("https://visitmykuwait.co/api/v1/map-content")
         .then((response) => response.json())
         .then((data) => {
