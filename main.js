@@ -4,14 +4,20 @@ import { checkDevice } from './responsive_phone.js';
 import { addControls } from './controls.js';
 
 let markers = []; 
+let infoWindow;
+let activeMarker = null;
 
 
-async function initialize() {
+
+export  async function initialize() {
 
 
    
 
             // Check if google.maps.OverlayView is loaded
+            if (typeof google.maps.OverlayView === 'undefined') {
+                await waitForOverlayView();
+              }
         
 
     
@@ -38,7 +44,7 @@ async function initialize() {
                 
                drawPolygon(map);
             }
-            waitForOverlayView();
+            
             await fetch("https://visitmykuwait.co/api/v1/map-content")
                 .then((response) => response.json())
                 .then((data) => {
@@ -152,7 +158,7 @@ class CustomInfoWindow extends google.maps.OverlayView{
     }
 }
 
-function waitForOverlayView() {
+async function waitForOverlayView() {
   return new Promise((resolve) => {
     if (typeof google.maps.OverlayView !== 'undefined') {
         resolve();
@@ -162,7 +168,7 @@ function waitForOverlayView() {
               clearInterval(checkInterval);
               resolve();
           }
-        }, 100); // Check every 100ms
+        }, 1000); // Check every 100ms
      }
    });
 }
@@ -172,8 +178,7 @@ function waitForOverlayView() {
 
 
 
-let infoWindow;
-let activeMarker = null;
+
 
 export function addMarkers(items, map, type) {
   let markers = [];
