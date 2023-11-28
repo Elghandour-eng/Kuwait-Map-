@@ -186,7 +186,7 @@ div {
   right: 0;
   bottom: 0; 
   width: 100%; 
-  height: 65%; 
+  height: 55%; 
   background-color: #fff;
   padding: 20px;
   box-sizing: border-box;
@@ -209,15 +209,17 @@ div {
   display: flex;
   justify-content: center;
   align-items: center;
-
   padding-bottom: 20px;
 }
 
 #mobilebar .mobilebar-img-des img {
-  margin-top: 10px;
+  margin-top:90px;
   margin-bottom: 10px;
-  height: 40%;
-  width: 100%;
+  height: 400px;
+  width: 90%;
+  border-radius: 10px;
+  margin-bottom: 35px;
+  object-fit: cover;
 }
 
 
@@ -348,6 +350,7 @@ div {
   display: flex;
   flex-direction: column;
   gap: 1;
+  height: 20px;
 }
 
 .mobilebar-des

@@ -1,5 +1,7 @@
 import { checkDevice } from './responsive_phone.js';
 
+let activeMarker = null;
+
 export function addMarkers(items, map, type) {
     let markers = [];
 
@@ -9,12 +11,15 @@ export function addMarkers(items, map, type) {
             position: { lat: parseFloat(item.lat), lng: parseFloat(item.lng || item.lang) },
             map: map,
             title: item.title,
+            active: false,
             icon: {
-                url: "map/images/marker.svg",
+                url:  "map/images/blue pin point.svg",
                 scaledSize: checkDevice() == "Mobile Device" ?  new google.maps.Size(60, 60) : new google.maps.Size(30, 30),
                 origin: new google.maps.Point(0, 0),
                 anchor: new google.maps.Point(15, 30),
                 labelOrigin: new google.maps.Point(15, 15),
+                animation: google.maps.Animation.BOUNCE,
+       
                 
             },
             type // Add the type here
@@ -24,6 +29,33 @@ export function addMarkers(items, map, type) {
             marker,
             "click",
             function () {
+
+                if (activeMarker) {
+                    activeMarker.setIcon({
+                        url: "map/images/blue pin point.svg",
+                        scaledSize: checkDevice() == "Mobile Device" ?  new google.maps.Size(60, 60) : new google.maps.Size(30, 30),
+                        origin: new google.maps.Point(0, 0),
+                        anchor: new google.maps.Point(15, 30),
+                        labelOrigin: new google.maps.Point(15, 15),
+                        animation: google.maps.Animation.BOUNCE,
+                    });
+                }
+
+                // Set the clicked marker as the active marker and change its icon to red
+                activeMarker = marker;
+                marker.setIcon({
+                    url: "map/images/red pin point.svg",
+                    scaledSize: checkDevice() == "Mobile Device" ?  new google.maps.Size(60, 60) : new google.maps.Size(30, 30),
+                    origin: new google.maps.Point(0, 0),
+                    anchor: new google.maps.Point(15, 30),
+                    labelOrigin: new google.maps.Point(15, 15),
+                    animation: google.maps.Animation.BOUNCE,
+                });
+
+   
+
+
+
                 var sidebar = document.getElementById("sidebar");
                 const mobilebar = document.getElementById("mobilebar");
 
@@ -47,7 +79,7 @@ export function addMarkers(items, map, type) {
                         <img src="${item.cover}" style="border-radius: 15px;padding: 12px">
                         <p>${item.description}</p>                     
                         <p>${item.content}</p>
-                        <a href="${item.url}" target='_blank'>استكشف المذيد</a>
+                        <a href="${item.url}" target='_blank'>استكشف المزيد</a>
                         </div>`;
                      /*
                         <button class="icon-top" style="position: absolute; top: 0; left: 50%; transform: translateX(-50%);">
@@ -80,7 +112,7 @@ export function addMarkers(items, map, type) {
 
                              <div class="mobilebar-con">
                              </div>
-                             <a href="${item.url}" target='_blank' class="mobilebar-button">استكشف المذيد</a>
+                             <a href="${item.url}" target='_blank' class="mobilebar-button">استكشف المزيد</a>
                          </div> 
                      </div>`;
 
